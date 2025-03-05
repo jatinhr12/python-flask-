@@ -23,15 +23,19 @@
   <h2 class="text-center mt-4 mb-2">Open position</h2>
   <div>
     {% for job_item in job %}
-    <div>{{job_item['title']}}</div>
+    <div>
+      <h4 style="color:rgb(120,120,120)" class="mt-2 mb-2">{{job_item['title']}}</h4>
+      <div><b>Location :</b> {{job_item['location']}}</div>
+      {% if 'salary' in job %}
+      <div>
+        <b>Salary :</b>
+        {{job_item['salary']}}
+      </div>
+      {% endif %}
+    </div>
     {% endfor %}
   </div>
 
-   <!-- <p>
-     {% for jobs in job %}
-           <div>{{job['title']}}</div>
-     {% endfor %}
-   </p> -->
     
     <div class="text-center">
   <button class="btn btn-outline-primary">Contact us</button> 
