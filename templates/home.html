@@ -20,22 +20,12 @@
   <img class="img-fluid" id="banner" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7cRYFyLoDEDh4sRtM73vvwHaDg%26pid%3DApi&f=1&ipt=68c05c8500c3446c43efe013b165dee4dcba504aa55b8c8dd01b00106dc1c55a&ipo=images">
   <h2 class="text-center">About Jatin</h2>
   <p class="lead mt-2 mb-4">Next we create an instance of this class. The first argument is the name of the application’s module or package. Name is a convenient shortcut for this that is appropriate for most cases. This is needed so that Flask knows where to look for resources such as templates and static files.</p>
-  <h2 class="text-center mt-4 mb-2">Open position</h2>
-  <div>
-    {% for job_item in job %}
-    <div>
-      <h4 style="color:rgb(120,120,120)" class="mt-2 mb-2">{{job_item['title']}}</h4>
-      <div><b>Location :</b> {{job_item['location']}}</div>
-      {% if 'salary' in job %}
-      <div>
-        <b>Salary :</b>
-        {{job_item['salary']}}
-      </div>
-      {% endif %}
-    </div>
-    {% endfor %}
-  </div>
-
+  <h2 class="text-center mt-4 mb-2">Open Position</h2>
+   <div>
+     {% for job_items in job%}
+        {% include 'jobitem.html'%}
+     {% endfor %}
+   </div>
     
     <div class="text-center">
   <button class="btn btn-outline-primary">Contact us</button> 
